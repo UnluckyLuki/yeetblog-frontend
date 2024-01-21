@@ -2,8 +2,6 @@ import React, {Component} from 'react';
 import {styled} from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
-import Grid from '@mui/material/Unstable_Grid2';
-import AvatarComponent from "./AvatarComponent";
 import Stack from '@mui/material/Stack';
 
 
@@ -25,25 +23,23 @@ const SubItem = styled(Paper)(({theme}) => ({
 }));
 
 class ProfileCard extends Component {
+
     render() {
         return (
             <Box>
                 <Item elevation={1}>
                     <Stack spacing={2}>
                         <SubItem>
-                            <AvatarComponent/>
+                            UserName: {this.props.user.name}
                         </SubItem>
                         <SubItem>
-                            UserName:
+                            Email: {this.props.user.email}
                         </SubItem>
                         <SubItem>
-                            Email:
+                            Number of posts: {this.props.numberOfPosts}
                         </SubItem>
                         <SubItem>
-                            NumberOfPosts:
-                        </SubItem>
-                        <SubItem>
-                            CreatedAt:
+                            With us since: {this.props.user.createdAt.toString()}
                         </SubItem>
                     </Stack>
                 </Item>
